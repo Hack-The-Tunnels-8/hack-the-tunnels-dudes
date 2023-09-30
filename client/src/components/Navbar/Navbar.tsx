@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { useAccountContext } from "../../context";
 import "./Navbar.style.scss";
 
+import shenronImage from "./shenron.png";
+
 function Navbar() {
   const { loggedIn, logout } = useAccountContext();
   const navigate = useNavigate();
@@ -10,7 +12,9 @@ function Navbar() {
   return (
     <div className="navbar">
       <div className="navbar__logo">
-        <Link to="/">Store Logo</Link>
+        <Link to="/"> 
+          <img src={ shenronImage } /> 
+        </Link>
       </div>
       <div className="navbar__account">
         {loggedIn() === false ? (

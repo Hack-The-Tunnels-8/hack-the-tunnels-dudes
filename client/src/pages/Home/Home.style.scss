@@ -4,8 +4,11 @@
   }
 
   &__products {
+    
     display: flex;
-    flex-direction: column;
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    gap: 20px;
 
     a {
       text-decoration: none;

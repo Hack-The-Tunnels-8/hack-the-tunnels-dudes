@@ -2,4 +2,34 @@
   display: flex;
   width: 100%;
   justify-content: space-between;
+
+  position: fixed;
+  padding-top: 20px;
+
+}
+
+.navbar__logo img {
+  height: 100px;
+  width: 100px;
+}
+
+.navbar__account {
+  padding-right: 50px;
+}
+
+.navbar__logo {
+  padding-left: 50px;
+}
+
+.navbar__account button {
+  color: black;
+  background-color: white;
+  border-radius: 15px;
+  margin-left: 10px;
+  padding: 5px;
+}
+
+.navbar__account button:hover {
+
+  background-color: turquoise;
 }
