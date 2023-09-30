@@ -39,3 +39,25 @@ export const create = async (
 
   return newProduct;
 };
+
+
+export const update = async (id: string, data: Partial<Product>): Promise<Product | null> => {
+  // Find the product by ID
+  const existingProduct = await prisma.product.findFirst({
+    where: { id: parseInt(id) },
+  });
+
+  if (!existingProduct) {
+    return null; 
+  }
+
+  const updatedProduct = await prisma.product.update({
+    where: { id: parseInt(id) },
+    data: {
+      ...existingProduct,
+      ...data,
+    },
+  });
+
+  return updatedProduct;
+};

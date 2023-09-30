@@ -86,9 +86,45 @@ const createProduct222 = async (request: Request, response: Response) => {
     statusCode: 201,
   });
 };
+// service/src/infrastructure/api/routes/products.ts
+
+const updateProduct = async (request: Request, response: Response) => {
+  // Check authorization
+  const authorization = await verifyAuthorization(
+    request.headers.authorization,
+  );
+
+  if (authorization.err) {
+    return error(response, {
+      error: authorization.val.message,
+      statusCode: 401,
+    });
+  }
+
+  const id = request.params.id;
+  const productData = request.body;
+
+  // Call the update function
+  const updatedProduct = await ProductService.update(id, productData);
+
+  if (!updatedProduct) {
+    return error(response, {
+      error: "Product not found.",
+      statusCode: 404,
+    });
+  }
+
+  return success(response, {
+    data: {
+      product: updatedProduct,
+    },
+    statusCode: 200,
+  });
+};
+
 
 router.get("/", getProducts);
 router.get("/:id", getProduct);
 router.post("/", createProduct);
-
+router.put("/:id", updateProduct);
 export default router;
