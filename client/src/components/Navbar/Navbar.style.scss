@@ -6,6 +6,8 @@
   position: fixed;
   padding-top: 20px;
 
+  background-color: white;
+
 }
 
 .navbar__logo img {
@@ -32,4 +34,20 @@
 .navbar__account button:hover {
 
   background-color: turquoise;
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+  .navbar.adaptive {
+    background-color: rgb(94, 94, 94);
+    color: rgb(255, 255, 255);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .navbar.adaptive {
+    background: rgb(221, 221, 221);
+    color: #334;
+  }
 }

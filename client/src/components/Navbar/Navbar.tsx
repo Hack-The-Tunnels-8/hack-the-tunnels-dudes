@@ -10,12 +10,13 @@ function Navbar() {
   const navigate = useNavigate();
 
   return (
-    <div className="navbar">
+    <div className="navbar adaptive">
       <div className="navbar__logo">
         <Link to="/"> 
           <img src={ shenronImage } /> 
         </Link>
       </div>
+
       <div className="navbar__account">
         {loggedIn() === false ? (
           <>
