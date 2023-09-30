@@ -9,6 +9,7 @@ import {
   Home,
   Login,
   Product,
+  NotFound,
   SignUp,
 } from "./pages";
 import { AccountProvider } from "./context";
@@ -45,7 +46,7 @@ const router = createBrowserRouter([
   },
   {
     path: "*",
-    element: <div>404</div>,
+    element: <NotFound />,
   },
 ]);
 
