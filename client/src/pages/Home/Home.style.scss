@@ -16,3 +16,15 @@
     }
   }
 }
+
+body {
+  animation-name: bg-color;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bg-color {
+  0% {background-color: white;}
+  50% {background-color: rgb(210, 210, 210);}
+  100% {background-color: white;}
+}
